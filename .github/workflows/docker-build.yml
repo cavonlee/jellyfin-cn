@@ -14,11 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 用 jq 稳定获取最新版本号
       - name: Get latest Jellyfin version
         id: get_version
         run: |
-          VERSION=$(curl -s https://api.github.com/repos/jellyfin/jellyfin/releases/latest | jq -r '.tag_name')
+          VERSION=$(curl -s https://api.github.com/repos/jellyfin/jellyfin/releases/latest | jq -r '.tag_name' | sed 's/^v//')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "使用版本: $VERSION"
 
