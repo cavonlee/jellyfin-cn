@@ -6,7 +6,8 @@
 # docker push cavon/jellyfin:latest
 
 
-FROM lscr.io/linuxserver/jellyfin:${JELLYFIN_VERSION}
+# FROM lscr.io/linuxserver/jellyfin:${JELLYFIN_VERSION}
+FROM lscr.io/linuxserver/jellyfin:10.10.5
 
 
 RUN apt update -y
