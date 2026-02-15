@@ -6,7 +6,8 @@
 # docker push cavon/jellyfin:latest
 
 
-FROM lscr.io/linuxserver/jellyfin:latest
+FROM lscr.io/linuxserver/jellyfin:${JELLYFIN_VERSION}
+
 
 RUN apt update -y
 RUN apt install -y fonts-noto-cjk-extra
